@@ -19,6 +19,8 @@ const connect = function() {
   // connect : specific event that happens when a successful connection is made
   conn.on("connect", () => {
     console.log('From Client: Successfully connected to Server!'); //print msg for players
+
+    conn.write("Move: up"); //after connecting do move up(I used existing connect callback, but we can creat new one)
   });
 
   // earliest point at which the client can start sending data/messages to the server: As soon as the connection is successfully established
