@@ -13,6 +13,12 @@ const connect = function() {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  //conn.on("event name", functionThatDoesSomething);
+  // connect : specific event that happens when a successful connection is made
+  conn.on("connect", () => {
+    console.log('From Client: Successfully connected to Server!'); //print msg for players
+  });
+  
   return conn;
 };
 
