@@ -8,6 +8,7 @@ connect();
 // setup interface to handle user input from stdin
 
 const setupInput = function () {
+
   const stdin = process.stdin; //stdin object returned by setupInput will allow us to listen for keyboard input and react to it 
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -18,3 +19,12 @@ const setupInput = function () {
   
   return stdin;
 };
+
+const handleUserInput = function(key) {
+  //function to contrlo cntrl+c
+  if (key === '\u0003') {
+    process.exit();
+  }
+}; 
+
+setupInput();
