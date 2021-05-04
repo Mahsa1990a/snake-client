@@ -24,9 +24,15 @@ const setupInput = function (conn) {
 
 const handleUserInput = function(key) {
 
+  // Sending messages with Say: ___
   if (key === "m") {
     connection.write("Say: hii")
   }
+  if (key === "n") {
+    connection.write("Say: bye")
+  }
+  
+  // Movements:
   if (key === "w") {
     //console.log("up");
     connection.write("Move: up");
