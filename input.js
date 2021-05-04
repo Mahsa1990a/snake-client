@@ -1,5 +1,7 @@
 // input.js: For managing user input(keyboard)
 
+const { moveUpKey, moveDnKey, moveLeftKey, moveRightKey, messageKey1, messageKey2 } = require('./constants');
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -25,29 +27,49 @@ const setupInput = function (conn) {
 const handleUserInput = function(key) {
 
   // Sending messages with Say: ___
-  if (key === "m") {
+
+  // if (key === "m") {
+  //   connection.write("Say: hii")
+  // }
+  if (key === messageKey1) {
     connection.write("Say: hii")
   }
-  if (key === "n") {
+  // if (key === "n") {
+  //   connection.write("Say: bye")
+  // }
+  if (key === messageKey2) {
     connection.write("Say: bye")
   }
-  
+
   // Movements:
-  if (key === "w") {
-    //console.log("up");
-    connection.write("Move: up");
+
+  // if (key === "w") {
+  //   //console.log("up");
+  //   connection.write("Move: up");
+  // }                                     UPDATE:
+  if (key === moveUpKey) {
+    connection.write('Move: up');
   }
-  if (key === "a") {
-    //console.log("left");
-    connection.write("Move: left");
+  // if (key === "a") {
+  //   //console.log("left");
+  //   connection.write("Move: left");
+  // }
+  if (key === moveLeftKey) {
+    connection.write('Move: left');
   }
-  if (key === "s") {
-    //console.log("down");
-    connection.write("Move: down");
+  // if (key === "s") {
+  //   //console.log("down");
+  //   connection.write("Move: down");
+  // }
+  if (key === moveDnKey) {
+    connection.write('Move: down');
   }
-  if (key === "d") {
-    //console.log("right");
-    connection.write("Move: right");
+  // if (key === "d") {
+  //   //console.log("right");
+  //   connection.write("Move: right");
+  // }
+  if (key === moveRightKey) {
+    connection.write('Move: right');
   }
 
   //function to contrlo cntrl+c
