@@ -23,6 +23,26 @@ const setupInput = function (conn) {
 
 const handleUserInput = function(key) {
 
+  if (key === "m") {
+    conn.write("Say: hii")
+  }
+  if (key === "w") {
+    //console.log("up");
+    conn.write("Move: up");
+  }
+  if (key === "a") {
+    //console.log("left");
+    conn.write("Move: left");
+  }
+  if (key === "s") {
+    //console.log("down");
+    conn.write("Move: down");
+  }
+  if (key === "d") {
+    //console.log("right");
+    conn.write("Move: right");
+  }
+
   //function to contrlo cntrl+c
   if (key === '\u0003') {
     process.exit();
