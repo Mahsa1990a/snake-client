@@ -12,5 +12,9 @@ const setupInput = function () {
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
+
+  // Now I need event listener for stdin => this listener will use handleUserInput function that runs when you receive input from your keyboard
+  stdin.on("data", handleUserInput);
+  
   return stdin;
 };
