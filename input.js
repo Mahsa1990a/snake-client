@@ -16,7 +16,8 @@ const setupInput = function (conn) {
   stdin.resume();
 
   // Now I need event listener for stdin => this listener will use handleUserInput function that runs when you receive input from your keyboard
-  stdin.on("data", handleUserInput);
+  // stdin.on("data", handleUserInput);
+  stdin.on("data", key => handleUserInput(key)); //using function with key parameter
   
   return stdin;
 };
@@ -24,23 +25,23 @@ const setupInput = function (conn) {
 const handleUserInput = function(key) {
 
   if (key === "m") {
-    conn.write("Say: hii")
+    connection.write("Say: hii")
   }
   if (key === "w") {
     //console.log("up");
-    conn.write("Move: up");
+    connection.write("Move: up");
   }
   if (key === "a") {
     //console.log("left");
-    conn.write("Move: left");
+    connection.write("Move: left");
   }
   if (key === "s") {
     //console.log("down");
-    conn.write("Move: down");
+    connection.write("Move: down");
   }
   if (key === "d") {
     //console.log("right");
-    conn.write("Move: right");
+    connection.write("Move: right");
   }
 
   //function to contrlo cntrl+c
