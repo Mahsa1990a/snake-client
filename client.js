@@ -27,13 +27,19 @@ const connect = function() {
     console.log('From Client: Successfully connected to Server!'); //print msg for players
 
     // conn.write("Move: up"); //after connecting do move up(I used existing connect callback, but we can creat new one) //Update:
-    setTimeout(() => {
-      conn.write("Move: up"); //syntax send data from client to server
-    }, 1000);
+    // setTimeout(() => {
+    //   conn.write("Move: up"); //syntax send data from client to server
+    // }, 1000);
   });
 
   // earliest point at which the client can start sending data/messages to the server: As soon as the connection is successfully established
   conn.write("Name: Mah"); //syntax send data from client to server
+
+  // Print messages from server to the console:
+  conn.on('data', (data) => {
+    console.log('Server says: ', data);
+  });
+  
   return conn;
 };
 

@@ -7,4 +7,4 @@ console.log("Connecting ...");
 // the object returned by connect() should be passed into setupInput()
 const conn = connect();//making connection
 
-setupInput(conn);
+setupInput(conn); // or: setupInput(connect());
