@@ -21,6 +21,8 @@ const connect = function() {
     console.log('From Client: Successfully connected to Server!'); //print msg for players
   });
 
+  // earliest point at which the client can start sending data/messages to the server: As soon as the connection is successfully established
+  conn.write("Name: Mah"); //syntax send data from client to server
   return conn;
 };
 
