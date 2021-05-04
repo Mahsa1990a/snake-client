@@ -22,7 +22,7 @@ const connect = function() {
 
     // conn.write("Move: up"); //after connecting do move up(I used existing connect callback, but we can creat new one) //Update:
     setTimeout(() => {
-      conn.write("Move: up");
+      conn.write("Move: up"); //syntax send data from client to server
     }, 1000);
   });
 
